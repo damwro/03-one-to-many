@@ -20,10 +20,10 @@ public class Driver {
     private String lastName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "driver")
+    @JoinColumn(name = "driver_detail_id")
     private DriverDetail driverDetail;
 
-    @OneToMany(mappedBy = "bus_line_id",
+    @OneToMany(mappedBy = "driver",
             cascade = {
                     CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH
             })
