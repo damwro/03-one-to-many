@@ -79,7 +79,7 @@ public class Driver {
 
     /**
      * dodawanie linii, którą obsługuje kierowca
-     * @param busLine
+     * @param busLine linia autobusowo-tramwajowa
      */
     public void addBusLine(BusLine busLine) {
         if (busLines == null) {
