@@ -39,7 +39,7 @@ CREATE TABLE `bus_line` (
 
   UNIQUE KEY `TITLE_UNIQUE` (`title`),
 
-  KEY `FK_INSTRUCTOR_idx` (`driver_id`),
+  KEY `FK_DRIVER_idx` (`driver_id`),
 
   CONSTRAINT `FK_DRIVER`
   FOREIGN KEY (`driver_id`)
