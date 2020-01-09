@@ -1,6 +1,7 @@
 package sdacademy.demo.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,6 +22,12 @@ public class Driver {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "driver")
     private DriverDetail driverDetail;
+
+    @OneToMany(mappedBy = "bus_line_id",
+            cascade = {
+                    CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH
+            })
+    private List<BusLine> busLines;
 
     public Driver() {
     }
@@ -60,6 +67,26 @@ public class Driver {
 
     public void setDriverDetail(DriverDetail driverDetail) {
         this.driverDetail = driverDetail;
+    }
+
+    public List<BusLine> getBusLines() {
+        return busLines;
+    }
+
+    public void setBusLines(List<BusLine> busLines) {
+        this.busLines = busLines;
+    }
+
+    /**
+     * dodawanie linii, którą obsługuje kierowca
+     * @param busLine
+     */
+    public void addBusLine(BusLine busLine) {
+        if (busLines == null) {
+            busLines = new ArrayList<>();
+        }
+        busLines.add(busLine);
+        busLine.setDriver(this);
     }
 
     @Override
