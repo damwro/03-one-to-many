@@ -25,7 +25,7 @@ public class CreateBusLineDemo {
             session.beginTransaction();
 
             //pobieranie kierowcy
-            Long id = 4L;
+            Long id = 1L;
             Driver driver = session.get(Driver.class, id);
 
             //tworzenie linii autobusowych
