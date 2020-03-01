@@ -7,7 +7,7 @@ public class JDBCConnection {
 
     public static void main(String[] args) {
         //strefa czasowa oraz wyłączenie SSL
-        String jdbcUrl = "jdbc:mysql://localhost:3306/01-one-to-one-uni?useSSL=false&serverTimezone=UTC";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/03-one-to-many?useSSL=false&serverTimezone=UTC";
         String user = "student";
         String password = "Student123!";
 
